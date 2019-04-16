@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var swicth: UIButton!
+
+    @IBOutlet weak var backbutton: UIButton!
     
     var dispImageNo = 0
     
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
         
         if timer == nil {
             // タイマーが動いていない
-            button.isEnabled = true
+            backbutton.isEnabled = true
             //表示している画像の番号を1減らす
             dispImageNo -= 1
             
@@ -41,9 +42,9 @@ class ViewController: UIViewController {
             displayImage()
         }
         else {
-            button.isEnabled = false
+            backbutton.isEnabled = false
         }
-        button.isEnabled = true
+        backbutton.isEnabled = true
     }
     
     //表示している画像の番号を元に画像を表示する
@@ -105,6 +106,8 @@ class ViewController: UIViewController {
 //    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
     
     @IBAction func suraido(_ sender: Any) {
+        button.isEnabled = false
+        backbutton.isEnabled = false
         if timer == nil {
             // タイマーが動いていない
             onUpdate()
@@ -115,6 +118,8 @@ class ViewController: UIViewController {
             timer?.invalidate()
             timer = nil
             swicth.setTitle("再生", for: .normal)
+            button.isEnabled = true
+            backbutton.isEnabled = true
         }
     }
     
@@ -144,8 +149,14 @@ class ViewController: UIViewController {
         
         resultViewController.hoge = name
         
+        if timer != nil {
+        self.timer.invalidate()
+        }
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        if timer != nil{
+        onUpdate()
+        }
     }
 }

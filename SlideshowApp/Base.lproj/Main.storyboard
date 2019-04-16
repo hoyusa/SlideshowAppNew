@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="med-Iy-THk">
-                                <rect key="frame" x="30" y="59" width="315" height="230"/>
+                                <rect key="frame" x="30" y="35" width="260" height="230"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="lbN-GP-zjC"/>
@@ -29,24 +29,24 @@
                                 </connections>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="Ycj-Bo-aRW">
-                                <rect key="frame" x="20" y="339" width="335" height="100"/>
+                                <rect key="frame" x="20" y="315" width="280" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5r-8q-s1r">
-                                        <rect key="frame" x="0.0" y="0.0" width="71.666666666666671" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="100"/>
                                         <state key="normal" title="進む"/>
                                         <connections>
                                             <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qsB-ad-TDt"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26o-nv-OlN">
-                                        <rect key="frame" x="131.66666666666666" y="0.0" width="71.666666666666657" height="100"/>
-                                        <state key="normal" title="再生/停止"/>
+                                        <rect key="frame" x="113.5" y="0.0" width="53" height="100"/>
+                                        <state key="normal" title="再生"/>
                                         <connections>
                                             <action selector="suraido:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scx-Hv-5g5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxN-EY-a8Z">
-                                        <rect key="frame" x="263.33333333333331" y="0.0" width="71.666666666666686" height="100"/>
+                                        <rect key="frame" x="226.5" y="0.0" width="53.5" height="100"/>
                                         <state key="normal" title="戻る"/>
                                         <connections>
                                             <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qn2-Nx-LL8"/>
@@ -71,6 +71,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backbutton" destination="dxN-EY-a8Z" id="Vuj-lG-M8b"/>
                         <outlet property="button" destination="t5r-8q-s1r" id="UTN-oa-9Kc"/>
                         <outlet property="image1" destination="med-Iy-THk" id="APY-w6-h6l"/>
                         <outlet property="swicth" destination="26o-nv-OlN" id="UuN-75-9r1"/>
